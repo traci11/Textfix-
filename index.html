@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TextFix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      color: #222;
+    }
+    textarea {
+      width: 100%;
+      max-width: 500px;
+      height: 120px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+    .output {
+      margin-top: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>TextFix</h1>
+<p>Paste messy text. Get it cleaned.</p>
+
+<textarea id="input" placeholder="Paste text here..."></textarea><br>
+<button onclick="fixText()">Fix Text</button>
+
+<div class="output" id="output"></div>
+
+<script>
+function fixText() {
+  let text = document.getElementById("input").value;
+  text = text.replace(/\s+/g, ' ').trim();
+  document.getElementById("output").innerText = text;
+}
+</script>
+
+</body>
+</html>
