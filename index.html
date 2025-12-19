@@ -1,59 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TextFix</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
       padding: 30px;
-      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     h1 {
-      color: #222;
+      text-align: center;
+      color: #333;
+    }
+    p {
+      color: #555;
+      line-height: 1.6;
     }
     textarea {
       width: 100%;
-      max-width: 500px;
       height: 120px;
+      margin-top: 15px;
       padding: 10px;
       font-size: 16px;
     }
     button {
-      margin-top: 10px;
-      padding: 12px 20px;
-      font-size: 16px;
-      background: #4CAF50;
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      font-size: 18px;
+      background: #4f46e5;
       color: white;
       border: none;
       border-radius: 6px;
     }
-    .output {
+    .note {
       margin-top: 20px;
-      background: white;
-      padding: 15px;
-      border-radius: 6px;
+      font-size: 14px;
+      color: #777;
+      text-align: center;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>TextFix</h1>
+    <p>
+      Paste a message below and TextFix will help rewrite it to sound
+      clearer, calmer, or more confident.
+    </p>
 
-<h1>TextFix</h1>
-<p>Paste messy text. Get it cleaned.</p>
+    <textarea placeholder="Paste your text here..."></textarea>
 
-<textarea id="input" placeholder="Paste text here..."></textarea><br>
-<button onclick="fixText()">Fix Text</button>
+    <button>Fix My Text</button>
 
-<div class="output" id="output"></div>
-
-<script>
-function fixText() {
-  let text = document.getElementById("input").value;
-  text = text.replace(/\s+/g, ' ').trim();
-  document.getElementById("output").innerText = text;
-}
-</script>
-
+    <p class="note">
+      🚀 AI-powered rewriting coming soon
+    </p>
+  </div>
 </body>
 </html>
